@@ -1,11 +1,11 @@
 const endpoints = {
-    "/index.html": "topstories",
-    "/": "topstories",
-    "/news.html": "newstories",
-    "/jobs.html": "jobstories",
+    "index.html": "topstories",
+    "news.html": "newstories",
+    "jobs.html": "jobstories",
 };
 
-const currentPath = window.location.pathname;
+const [currentPath] = window.location.pathname.split('/').slice(-1);
+console.log(currentPath);
 const endpoint = endpoints[currentPath] || "topstories";
 
 let currentIdx = 0;
