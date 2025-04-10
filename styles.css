@@ -1,0 +1,107 @@
+html {
+    box-sizing: border-box;
+    --bg-color: rgb(255, 244, 230);
+    --orange: #ff9829;
+    --h-color: #e47600;
+
+    @media (prefers-color-scheme: dark) {
+        --bg-color: rgb(44, 42, 40);
+        --h-color: #ffa749;
+    }
+}
+
+
+body {
+    background-color: var(--bg-color);
+
+    header {
+        img#logo {
+            object-fit: cover;
+            border-radius: 50px;
+            height: 100%;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            font-weight: bolder;
+        }
+
+        nav {
+            background-color: var(--orange);
+
+            #navbarNav {
+                --bs-navbar-active-color: white;
+                --bs-navbar-color: rgb(105, 71, 49);
+                --bs-navbar-disabled-color: rgb(133, 133, 133);
+
+                text-shadow: none;
+
+                color: white;
+
+                font-size: larger;
+            }
+        }
+
+    }
+
+    p.h1 {
+        color: var(--h-color);
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+
+        .container {
+
+            .card {
+                min-width: 240px;
+                &:hover {
+                    outline: 2px solid var(--orange);
+                    box-shadow: 2px 2px 15px orange !important;
+                    border-color: var(--orange) !important;
+
+                }
+
+                box-shadow: 2px 2px 15px grey !important;
+
+                @media (prefers-color-scheme: dark) {
+                    box-shadow: none !important;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+    
+                    &:hover {
+                        color: var(--orange);
+                    }
+                }
+            }
+
+            .card-body {
+                height: 80px;
+                text-overflow: ellipsis;
+            }
+
+            .card-footer {
+                font-size: 14px;
+            }
+
+        }
+    }
+
+    .load-more {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+
+        button {
+            background-color: rgb(245, 131, 0);
+            border: none;
+        }
+    }
+
+}
